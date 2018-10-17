@@ -32,9 +32,19 @@ $body = $_REQUEST['Body'];
 $to = $_REQUEST['From'];
 $from = $_REQUEST['To'];
 file_put_contents("php://stderr", substr($body,9,5).PHP_EOL);
-file_put_contents("php://stderr", substr($body,21,5).PHP_EOL);
-
-
+file_put_contents("php://stderr", substr($body,23,5).PHP_EOL);
+$height=substr($body,9,4);
+$weight=substr($body,23,4);
+if($height !="1")
+{
+	$client->messages->create(
+        $to,
+        array(
+            'from' => $from,
+            'body' => "You are over weight",
+        )
+    );
+}
 $result = preg_replace("/[^A-Za-z0-9]/u", " ", $body); 
 $result = trim($result); 
 $result = strtolower($result); 
