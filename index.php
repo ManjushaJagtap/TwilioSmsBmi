@@ -5,6 +5,7 @@ require_once 'vendor/autoload.php'; // Loads the library
 use Twilio\Twiml;
 
 $response = new Twiml;
+console.log($_REQUEST['Body']);
 $response->message("I received your input!");
 
 print $response;
