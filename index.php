@@ -1,17 +1,3 @@
-Twilio
-TALK TO SALES  SUPPORT PLANS  TALK TO SUPPORT  API STATUS  VISIT TWILIO.COM
-Help Center
-Twilio Support   Programmable Messaging   SMS
-
-Start your search
-Building an SMS keyword response application
-SMS keyword applications are designed to send customized SMS replies based on the ‘Body’ of the incoming text message.
-
-When an SMS message is received at your Twilio phone number, your application will fetch the ‘Body’ request parameter of the message. Your application will then match the text of your incoming message with the keywords you have listed and send a reply.
-
- 
-
-The following is a PHP code example of a SMS Keyword Response Application. When an animal name messaged to a Twilio phone number, the definition of the animal with a photo is replied in response.
 
 <?php
 // Code for Twilio Support Document: https://support.twilio.com/hc/en-us/articles/223134267-Building-an-SMS-Keyword-Response-Application
@@ -22,8 +8,8 @@ use Twilio\Rest\Client;
 /*
 ** Your Account Sid and Auth Token from twilio.com/user/account
 */
-$sid = "AC7c22b85c625b7e97da50232ee1d49597";
-$token = "aea5ba68af2f804d7700077f93df54ef";
+$sid = "YourTwilioAccountSID";
+$token = "YourTwilioAuthToken";
 $client = new Client($sid, $token);
 
 /* 
@@ -91,16 +77,4 @@ if ($sendDefault != false) {
         )
     );
 }
-Was this article helpful?   9 out of 23 found this helpful	Facebook Twitter LinkedIn Google+
-Have more questions? Submit a request
-Recently viewed articles
-Receiving Two-Way SMS and MMS Messages with Twilio
-Related articles
-Receiving Two-Way SMS and MMS Messages with Twilio
-Configuring Phone Numbers to Receive and Respond to SMS and MMS Messages
-How to use templates with TwiML Bins
-Forwarding SMS messages to another phone number
-Sending and Receiving Limitations on Calls and SMS Messages
-We can’t wait to see what you build.
- ABOUT TWILIO LEGAL PRIVACY TWILIO.ORG PRESS & MEDIA JOBS
-COPYRIGHT © 2018 TWILIO, INC. ALL RIGHTS RESERVED.
+?>
