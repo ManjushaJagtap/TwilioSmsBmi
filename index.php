@@ -34,6 +34,7 @@ $client->messages->create(
 		'body' => "Your BMI is : ".$bmi,
 	)
 );
+
 if($bmi <="18.5")
 
 {
@@ -47,16 +48,38 @@ if($bmi <="18.5")
 	
 }
 
-
-/* if($height !="1")
+if($bmi >"18.6"  &&  $bmi <="24.9")
 {
 	$client->messages->create(
         $to,
         array(
             'from' => $from,
-            'body' => "You are over weight",
+			'body' => "\n\nYou are HEALTHY \n\nYou are good to go !! Continue with same diet plan and exercise",
+        )
+    );
+	
+}
+
+if("25.0"<= $bmi <="29.9")
+{
+	$client->messages->create(
+        $to,
+        array(
+            'from' => $from,
+			'body' => "\n\nYou are OVERWEIGHT \n\nFood Intake Necessary : \n\tVegetables \n\tSprouts \n\tYogurt \n\tGreen Tea \n\tFruits \n\n Exercise Necessary : \n\tBench Press \n\tIncline Bench Press \n\tCable Crossovers \n\tOne Arm Dumbbell Rows \n\tBar pulldowns \n\tDeadlifts",
         )
     );
 }
- */
+		
+if($bmi >="30.0")
+
+{
+	$client->messages->create(
+        $to,
+        array(
+            'from' => $from,
+			'body' => "\n\nYou are OBESE \n\nFood Intake Necessary : \n\tGreen Leafy Vegetables \n\tAvocado \n\t\Wheat \n\tSoyabean \n\tCocoa \n\tBerries \n\tGarlic \n\n Exercise Necessary : \n\tLeg Press \n\tLeg Extensions \n\tHamstring Curls \n\tSeated Calf Raises \n\tStanding Calf Raises",
+        )
+    );
+}
 ?>
