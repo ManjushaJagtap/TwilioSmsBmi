@@ -31,7 +31,7 @@ $defaultMessage = "Reply with one of the following keywords: monkey, dog, pigeon
 $body = $_REQUEST['Body']; 
 $to = $_REQUEST['From'];
 $from = $_REQUEST['To'];
-file_put_contents("php://stderr", $body.PHP_EOL);
+file_put_contents("php://stderr", substr($body,9,14).PHP_EOL);
 
 
 $result = preg_replace("/[^A-Za-z0-9]/u", " ", $body); 
@@ -50,7 +50,7 @@ foreach ($responseMessages as $animal => $messages) {
 
 
 if ($sendDefault != false) {
-	file_put_contents("php://stderr", "sending push 1 !!!".PHP_EOL);
+	
     $client->messages->create(
         $to,
         array(
