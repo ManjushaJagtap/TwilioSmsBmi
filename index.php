@@ -12,12 +12,10 @@ $sid = "AC7c22b85c625b7e97da50232ee1d49597";
 $token = "aea5ba68af2f804d7700077f93df54ef";
 $client = new Client($sid, $token);
 
-/* 
-** Array of response messages, to represent the function of a database.
-*/
+
 $responseMessages = array(
-    'monkey'    => array('body' => 'Monkey. A small to medium-sized primate that typically has a long tail, most kinds of which live in trees in tropical countries.', 
-                         'media' => 'https://cdn.pixabay.com/photo/2016/02/12/23/49/scented-monkey-1197100_960_720.jpg'),
+    'monkey'    => array('body' => 'Monkey. A small to medium-sized primate that typically has a long tail, most kinds of which live in trees in tropical countries.'), 
+                         
     'dog'       => array('body' => 'Dog. A domesticated carnivorous mammal that typically has a long snout, an acute sense of smell, and a barking, howling, or whining voice.',
                          'media' => 'https://cdn.pixabay.com/photo/2016/10/15/12/01/dog-1742295_960_720.jpg'),
     'pigeon'   => array('body' => 'Pigeon. A stout seed- or fruit-eating bird with a small head, short legs, and a cooing voice, typically having gray and white plumage.',
@@ -26,30 +24,19 @@ $responseMessages = array(
                          'media' => 'https://cdn.pixabay.com/photo/2013/02/04/20/48/owl-77894_960_720.jpg')
 );
 
-/* 
-** Default response message when receiving a message without key words.
-*/
+
 $defaultMessage = "Reply with one of the following keywords: monkey, dog, pigeon, owl.";
 
-/*
-** Read the contents of the incoming message fields.
-*/ 
 $body = $_REQUEST['Body']; 
 $to = $_REQUEST['From'];
 $from = $_REQUEST['To'];
+echo $body;
 
-/*
-** Remove formatting from $body until it is just lowercase   
-** characters without punctuation or spaces.
-*/
 $result = preg_replace("/[^A-Za-z0-9]/u", " ", $body); 
 $result = trim($result); 
 $result = strtolower($result); 
-$sendDefault = true; // Default message is sent unless key word is found in following loop.
+$sendDefault = true; 
 
-/*
-** Choose the correct message response and set default to false.
-*/
 foreach ($responseMessages as $animal => $messages) {
     if ($animal == $result) {
         $body = $messages['body'];
@@ -58,7 +45,7 @@ foreach ($responseMessages as $animal => $messages) {
     }
 }
 
-// Send the correct response message.
+
 if ($sendDefault != false) {
     $client->messages->create(
         $to,
