@@ -24,7 +24,22 @@ file_put_contents("php://stderr", substr($body,9,5).PHP_EOL);
 file_put_contents("php://stderr", substr($body,23,5).PHP_EOL);
 $height=substr($body,9,4);
 $weight=substr($body,23,4);
-if($height !="1")
+
+$bmi=$weight / ($height * $height);  
+if($bmi <="18.5")
+{
+	$client->messages->create(
+        $to,
+        array(
+            'from' => $from,
+			'body' => "You are UNDERWEIGHT /n Food Intake Necessary : /n/tMilk /n/tBanana /n/tDried Fruits /n/n Exercise Necessary : /n/tSwimming /n/tSquats /n/tCardio /n/tPullups /n/tDumbbell /n/tLateral /n/tRaises /n/tPushups",
+        )
+    );
+	
+}
+$response->message("Body mass index is: " .$bmi. "kg/m<sup>2</sup>") ;
+
+/* if($height !="1")
 {
 	$client->messages->create(
         $to,
@@ -34,5 +49,5 @@ if($height !="1")
         )
     );
 }
-
+ */
 ?>
