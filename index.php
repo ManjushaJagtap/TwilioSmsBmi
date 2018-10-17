@@ -26,19 +26,27 @@ $height=substr($body,9,4);
 $weight=substr($body,23,4);
 
 $bmi=$weight / ($height * $height);  
+
+$client->messages->create(
+	$to,
+	array(
+		'from' => $from,
+		'body' => "Your BMI is : ".$bmi,
+	)
+);
 if($bmi <="18.5")
+
 {
 	$client->messages->create(
         $to,
         array(
             'from' => $from,
-			'body' => "Your BMI is : ".$bmi,
 			'body' => "\n\nYou are UNDERWEIGHT \n\nFood Intake Necessary : \n\tMilk \n\tBanana \n\tDried Fruits \n\n Exercise Necessary : \n\tSwimming \n\tSquats \n\tCardio \n\tPullups \n\tDumbbell \n\tLateral \n\tRaises \n\tPushups",
         )
     );
 	
 }
-$response->message("Body mass index is: " .$bmi. "kg/m<sup>2</sup>") ;
+
 
 /* if($height !="1")
 {
