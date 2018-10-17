@@ -60,7 +60,7 @@ if($bmi >"18.5" and $bmi <="24.9")
 	
 }
 
-if("25.0"<= $bmi <="29.9")
+if("25.0"<= $bmi or $bmi <="29.9")
 {
 	$client->messages->create(
         $to,
