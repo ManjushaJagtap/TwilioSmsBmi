@@ -22,8 +22,8 @@ use Twilio\Rest\Client;
 /*
 ** Your Account Sid and Auth Token from twilio.com/user/account
 */
-$sid = "YourTwilioAccountSID";
-$token = "YourTwilioAuthToken";
+$sid = "AC7c22b85c625b7e97da50232ee1d49597";
+$token = "aea5ba68af2f804d7700077f93df54ef";
 $client = new Client($sid, $token);
 
 /* 
