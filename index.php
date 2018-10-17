@@ -42,12 +42,14 @@ foreach ($responseMessages as $animal => $messages) {
     if ($animal == $result) {
         $body = $messages['body'];
         $media = $messages['media'];
-        $sendDefault = false;
+		$sendDefault = false;
+		
     }
 }
 
 
 if ($sendDefault != false) {
+	echo "test chinmay";
     $client->messages->create(
         $to,
         array(
@@ -56,6 +58,7 @@ if ($sendDefault != false) {
         )
     );
 } else {
+	echo "test chinmay1";
     $client->messages->create(
         $to,
         array(
@@ -66,6 +69,3 @@ if ($sendDefault != false) {
     );
 }
 ?>
-<script>
-    console.log(<?= $body ?>);
-</script>
