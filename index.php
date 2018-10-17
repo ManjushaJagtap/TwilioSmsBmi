@@ -3,7 +3,7 @@
 
 require_once 'vendor/autoload.php'; // Loads the library
 use Twilio\Twiml;
-$number = $_POST['From];
+$number = $_POST['From'];
 $body = $_POST ['Body'];
 
 $response = new Twiml;
