@@ -59,7 +59,7 @@ if ($sendDefault != false) {
         )
     );
 } else {
-	file_put_contents("php://stderr", "sending push !!!".PHP_EOL);
+	file_put_contents("php://stderr", $body.PHP_EOL);
     $client->messages->create(
         $to,
         array(
