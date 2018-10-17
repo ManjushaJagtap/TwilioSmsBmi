@@ -32,7 +32,7 @@ if($bmi <="18.5")
         $to,
         array(
             'from' => $from,
-			'body' => "You are UNDERWEIGHT /n Food Intake Necessary : /n/tMilk /n/tBanana /n/tDried Fruits /n/n Exercise Necessary : /n/tSwimming /n/tSquats /n/tCardio /n/tPullups /n/tDumbbell /n/tLateral /n/tRaises /n/tPushups",
+			'body' => "You are UNDERWEIGHT \nFood Intake Necessary : \n\tMilk \n\tBanana \n\tDried Fruits \n\n Exercise Necessary : \n\tSwimming \n\tSquats \n\tCardio \n\tPullups \n\tDumbbell \n\tLateral \n\tRaises \n\tPushups",
         )
     );
 	
