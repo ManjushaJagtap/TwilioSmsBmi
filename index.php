@@ -50,7 +50,7 @@ foreach ($responseMessages as $animal => $messages) {
 
 
 if ($sendDefault != false) {
-	echo "test chinmay";
+	file_put_contents("php://stderr", "sending push 1 !!!".PHP_EOL);
     $client->messages->create(
         $to,
         array(
@@ -59,7 +59,7 @@ if ($sendDefault != false) {
         )
     );
 } else {
-	echo "test chinmay1";
+	file_put_contents("php://stderr", "sending push !!!".PHP_EOL);
     $client->messages->create(
         $to,
         array(
